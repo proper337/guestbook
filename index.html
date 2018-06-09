@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Guestbook</title>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <style>
+      .jumbotron {
+      background-color: #f4511e;
+      color: #fff;
+      padding: 100px 25px;
+      }
+      .bg-grey: {
+      background-color: #f6f6f6
+      }
+      .container-fluid {
+      padding: 50px 50px
+      }
+    </style>
+  </head>
+  <body>
+    <script id="guestbookTemplate" type="text/template">
+      <p><%= guestbook_id %> Guestbook </p>
+    </script>
+
+    <script id="greetingsListItemTemplate" type="text/template">
+      <p><%= guestbook_id %> Guestbook </p>
+      <b>Greeting:</b> <%= greeting %> <br>
+      <b>Author:</b> <%= author_id %> <br>
+      <b>Date:</b> <%= post_date %> <br>
+    </script>
+
+    <script id="createGreetingTemplate" type="text/template">
+      <form id="postGreeting">
+        <div class="form-group">
+          <label for="text">Greeting</label>
+          <input type="text" class="form-control" placeholder="Add greeting here"/>
+          <input type="submit" class="btn .btn-primary" value="Post Greeting"/>
+        </div>
+      </form>
+
+      <form id="changeGuestbook">
+        <div class="form-group">
+          <label for="text">Greeting</label>
+          <input type="text" class="form-control" placeholder="default"/>
+          <input type="submit" class="btn .btn-success" value="Change Guestbook"/>
+        </div>
+      </form>
+    </script>
+
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./node_modules/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="./node_modules/backbone/backbone-min.js"></script>
+    <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/custom.js"></script>
+
+    <div id="container">
+      <div class="jumbotron">
+        <h1>Guestbook App</h1>
+        <div id="guestbook"></div>
+      </div>
+      <div id="greetingsList" class="container-fluid"></div>
+      <div id="createGreeting" class="container-fluid bg-grey"></div>
+    </div>
+
+  </body>
+</html>
